@@ -1,17 +1,13 @@
 {
-  "semi": true,
-  "trailingComma": "es5",
-  "singleQuote": true,
-  "printWidth": 100,
   "tabWidth": 2,
   "useTabs": false,
-  "arrowParens": "always",
-  "endOfLine": "lf",
+  "singleQuote": true,
+  "semi": true,
   "bracketSpacing": true,
-  "bracketSameLine": false,
-  "plugins": [
-    "prettier-plugin-tailwindcss",
-    "prettier-plugin-vue"
-  ],
+  "arrowParens": "avoid",
+  "trailingComma": "es5",
+  "bracketSameLine": true,
+  "printWidth": 80,
+  "plugins": ["prettier-plugin-tailwindcss", "prettier-plugin-vue"],
   "vueIndentScriptAndStyle": true
 }

@@ -16,7 +16,9 @@ export const router = {
     .action(async ({ input }) => {
       try {
         // In a real app, you might save to a database or file
-        console.log(`Saving data: ${input.key} = ${JSON.stringify(input.value)}`);
+        console.log(
+          `Saving data: ${input.key} = ${JSON.stringify(input.value)}`
+        );
         return {
           success: true,
           message: `Data saved successfully for key: ${input.key}`,

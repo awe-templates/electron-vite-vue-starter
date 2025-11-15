@@ -15,6 +15,8 @@ describe('Window Management', () => {
 
     createMainWindow();
 
-    expect(mockBrowserWindow.webContents.setWindowOpenHandler).toHaveBeenCalled();
+    expect(
+      mockBrowserWindow.webContents.setWindowOpenHandler
+    ).toHaveBeenCalled();
   });
 });

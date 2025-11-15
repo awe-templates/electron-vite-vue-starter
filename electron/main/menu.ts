@@ -46,7 +46,10 @@ export function setupMenu() {
               { type: 'separator' as const },
               {
                 label: 'Speech',
-                submenu: [{ role: 'startSpeaking' as const }, { role: 'stopSpeaking' as const }],
+                submenu: [
+                  { role: 'startSpeaking' as const },
+                  { role: 'stopSpeaking' as const },
+                ],
               },
             ]
           : [
