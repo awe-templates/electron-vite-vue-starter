@@ -116,61 +116,61 @@ electron/
 
 .about-container {
   @apply max-w-3xl mx-auto;
-}
 
-.about-container h1 {
-  @apply mb-8 text-5xl [color:var(--text-primary)];
-}
+  h1 {
+    @apply mb-8 text-5xl [color:var(--text-primary)];
+  }
 
-.about-section {
-  @apply mb-8 p-6 border rounded-lg [border-color:var(--border-color)] [background-color:var(--card-bg)];
-}
+  .about-section {
+    @apply mb-8 p-6 border rounded-lg [border-color:var(--border-color)] [background-color:var(--card-bg)];
 
-.about-section h2 {
-  @apply mt-0 mb-4 text-2xl [color:var(--text-primary)];
-}
+    h2 {
+      @apply mt-0 mb-4 text-2xl [color:var(--text-primary)];
+    }
 
-.about-section p {
-  @apply leading-relaxed my-2 [color:var(--text-secondary)];
-}
+    p {
+      @apply leading-relaxed my-2 [color:var(--text-secondary)];
+    }
 
-.features-list {
-  @apply list-none p-0 m-0;
-}
+    .features-list {
+      @apply list-none p-0 m-0;
 
-.features-list li {
-  @apply py-2 leading-relaxed [color:var(--text-secondary)];
-}
+      li {
+        @apply py-2 leading-relaxed [color:var(--text-secondary)];
 
-.features-list strong {
-  @apply [color:var(--text-primary)];
-}
+        strong {
+          @apply [color:var(--text-primary)];
+        }
+      }
+    }
 
-.code-block {
-  @apply border rounded p-4 overflow-x-auto my-4 [border-color:var(--border-color)] [background-color:var(--code-bg)];
-}
+    .code-block {
+      @apply border rounded p-4 overflow-x-auto my-4 [border-color:var(--border-color)] [background-color:var(--code-bg)];
 
-.code-block code {
-  @apply font-mono text-sm leading-relaxed [color:var(--code-text)];
-}
+      code {
+        @apply font-mono text-sm leading-relaxed [color:var(--code-text)];
+      }
+    }
 
-.links-grid {
-  @apply grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4;
-}
+    .links-grid {
+      @apply grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4;
 
-.link-card {
-  @apply block p-4 border rounded no-underline transition-all duration-300 [border-color:var(--border-color)] [background-color:var(--bg-primary)];
-}
+      .link-card {
+        @apply block p-4 border rounded no-underline transition-all duration-300 [border-color:var(--border-color)] [background-color:var(--bg-primary)];
 
-.link-card:hover {
-  @apply -translate-y-0.5 [background-color:var(--card-bg)] [border-color:var(--primary-color)] [box-shadow:var(--card-shadow)];
-}
+        &:hover {
+          @apply -translate-y-0.5 [background-color:var(--card-bg)] [border-color:var(--primary-color)] [box-shadow:var(--card-shadow)];
+        }
 
-.link-card h3 {
-  @apply m-0 mb-2 text-base [color:var(--text-primary)];
-}
+        h3 {
+          @apply m-0 mb-2 text-base [color:var(--text-primary)];
+        }
 
-.link-card p {
-  @apply m-0 text-sm [color:var(--text-secondary)];
+        p {
+          @apply m-0 text-sm [color:var(--text-secondary)];
+        }
+      }
+    }
+  }
 }
 </style>

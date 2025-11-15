@@ -56,40 +56,39 @@ onMounted(() => {
 }
 
 .header {
-  @apply flex items-center justify-between px-4 py-4 border-b;
-  @apply [border-color:var(--border-color)] [background-color:var(--header-bg)];
-}
+  @apply flex items-center justify-between px-4 py-4 border-b [border-color:var(--border-color)] [background-color:var(--header-bg)];
 
-.title {
-  @apply text-2xl font-bold m-0 [color:var(--text-primary)];
-}
+  .title {
+    @apply text-2xl font-bold m-0 [color:var(--text-primary)];
+  }
 
-.nav {
-  @apply flex gap-6 flex-1 justify-center;
-}
+  .nav {
+    @apply flex gap-6 flex-1 justify-center;
 
-.nav a {
-  @apply text-base no-underline font-medium transition-colors duration-300 py-2 px-0 border-b-2 border-transparent [color:var(--text-secondary)];
-}
+    a {
+      @apply text-base no-underline font-medium transition-colors duration-300 py-2 px-0 border-b-2 border-transparent [color:var(--text-secondary)];
 
-.nav a:hover {
-  @apply [color:var(--text-primary)];
-}
+      &:hover {
+        @apply [color:var(--text-primary)];
+      }
 
-.nav a.active {
-  @apply [color:var(--primary-color)] [border-bottom-color:var(--primary-color)];
-}
+      &.active {
+        @apply [color:var(--primary-color)] [border-bottom-color:var(--primary-color)];
+      }
+    }
+  }
 
-.theme-toggle {
-  @apply bg-none border-none cursor-pointer p-2 flex items-center justify-center transition-colors duration-300 [color:var(--text-secondary)];
-}
+  .theme-toggle {
+    @apply bg-none border-none cursor-pointer p-2 flex items-center justify-center transition-colors duration-300 [color:var(--text-secondary)];
 
-.theme-toggle:hover {
-  @apply [color:var(--text-primary)];
-}
+    &:hover {
+      @apply [color:var(--text-primary)];
+    }
 
-.icon {
-  @apply w-6 h-6;
+    .icon {
+      @apply w-6 h-6;
+    }
+  }
 }
 
 .main {
