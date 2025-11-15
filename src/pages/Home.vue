@@ -157,86 +157,57 @@ onMounted(() => {
 </script>
 
 <style scoped>
+@reference 'tailwindcss';
+
 .section {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
+  @apply grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6;
 }
 
 .info-card {
-  background-color: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 0.5rem;
-  padding: 1.5rem;
-  transition: box-shadow 0.3s ease;
+  @apply border rounded-lg p-6 transition-shadow duration-300 [border-color:var(--border-color)] [background-color:var(--card-bg)];
 }
 
 .info-card:hover {
-  box-shadow: var(--card-shadow);
+  @apply [box-shadow:var(--card-shadow)];
 }
 
 .info-card h2 {
-  margin: 0 0 1rem 0;
-  color: var(--text-primary);
-  font-size: 1.25rem;
+  @apply m-0 mb-4 text-xl [color:var(--text-primary)];
 }
 
 .info-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  @apply grid grid-cols-2 gap-4;
 }
 
 .info-item {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+  @apply flex flex-col gap-0.5;
 }
 
 .info-label {
-  color: var(--text-secondary);
-  font-size: 0.875rem;
-  font-weight: 500;
+  @apply text-sm font-medium [color:var(--text-secondary)];
 }
 
 .info-value {
-  color: var(--text-primary);
-  font-family: monospace;
-  font-size: 0.95rem;
+  @apply font-mono text-sm [color:var(--text-primary)];
 }
 
 .tech-icons {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  gap: 1rem;
+  @apply grid grid-cols-[repeat(auto-fit,minmax(80px,1fr))] gap-4;
 }
 
 .tech-icon-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  text-decoration: none;
-  color: var(--text-secondary);
-  transition:
-    color 0.3s ease,
-    transform 0.3s ease;
-  padding: 0.5rem;
-  border-radius: 0.25rem;
+  @apply flex flex-col items-center gap-2 no-underline transition-all duration-300 p-2 rounded [color:var(--text-secondary)];
 }
 
 .tech-icon-item:hover {
-  color: var(--primary-color);
-  transform: translateY(-2px);
+  @apply [color:var(--primary-color)] -translate-y-0.5;
 }
 
 .tech-icon {
-  width: 3rem;
-  height: 3rem;
+  @apply w-12 h-12;
 }
 
 .tech-icon-item span {
-  font-size: 0.75rem;
-  text-align: center;
+  @apply text-xs text-center;
 }
 </style>

@@ -49,78 +49,50 @@ onMounted(() => {
 </script>
 
 <style scoped>
+@reference 'tailwindcss';
+
 .app {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+  @apply flex flex-col h-screen;
 }
 
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem;
-  border-bottom: 1px solid var(--border-color);
-  background-color: var(--header-bg);
+  @apply flex items-center justify-between px-4 py-4 border-b;
+  @apply [border-color:var(--border-color)] [background-color:var(--header-bg)];
 }
 
 .title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin: 0;
-  color: var(--text-primary);
+  @apply text-2xl font-bold m-0 [color:var(--text-primary)];
 }
 
 .nav {
-  display: flex;
-  gap: 1.5rem;
-  flex: 1;
-  justify-content: center;
+  @apply flex gap-6 flex-1 justify-center;
 }
 
 .nav a {
-  color: var(--text-secondary);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-  padding: 0.5rem 0;
-  border-bottom: 2px solid transparent;
+  @apply text-base no-underline font-medium transition-colors duration-300 py-2 px-0 border-b-2 border-transparent [color:var(--text-secondary)];
 }
 
 .nav a:hover {
-  color: var(--text-primary);
+  @apply [color:var(--text-primary)];
 }
 
 .nav a.active {
-  color: var(--primary-color);
-  border-bottom-color: var(--primary-color);
+  @apply [color:var(--primary-color)] [border-bottom-color:var(--primary-color)];
 }
 
 .theme-toggle {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-secondary);
-  transition: color 0.3s ease;
+  @apply bg-none border-none cursor-pointer p-2 flex items-center justify-center transition-colors duration-300 [color:var(--text-secondary)];
 }
 
 .theme-toggle:hover {
-  color: var(--text-primary);
+  @apply [color:var(--text-primary)];
 }
 
 .icon {
-  width: 1.5rem;
-  height: 1.5rem;
+  @apply w-6 h-6;
 }
 
 .main {
-  flex: 1;
-  overflow-y: auto;
-  padding: 2rem;
-  background-color: var(--bg-primary);
+  @apply flex-1 overflow-y-auto px-8 py-8 [background-color:var(--bg-primary)];
 }
 </style>

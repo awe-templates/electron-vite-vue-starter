@@ -112,102 +112,65 @@ electron/
 </script>
 
 <style scoped>
+@reference 'tailwindcss';
+
 .about-container {
-  max-width: 900px;
-  margin: 0 auto;
+  @apply max-w-3xl mx-auto;
 }
 
 .about-container h1 {
-  color: var(--text-primary);
-  margin-bottom: 2rem;
-  font-size: 2.5rem;
+  @apply mb-8 text-5xl [color:var(--text-primary)];
 }
 
 .about-section {
-  margin-bottom: 2rem;
-  padding: 1.5rem;
-  background-color: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 0.5rem;
+  @apply mb-8 p-6 border rounded-lg [border-color:var(--border-color)] [background-color:var(--card-bg)];
 }
 
 .about-section h2 {
-  color: var(--text-primary);
-  margin-top: 0;
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
+  @apply mt-0 mb-4 text-2xl [color:var(--text-primary)];
 }
 
 .about-section p {
-  color: var(--text-secondary);
-  line-height: 1.6;
-  margin: 0.5rem 0;
+  @apply leading-relaxed my-2 [color:var(--text-secondary)];
 }
 
 .features-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  @apply list-none p-0 m-0;
 }
 
 .features-list li {
-  padding: 0.5rem 0;
-  color: var(--text-secondary);
-  line-height: 1.6;
+  @apply py-2 leading-relaxed [color:var(--text-secondary)];
 }
 
 .features-list strong {
-  color: var(--text-primary);
+  @apply [color:var(--text-primary)];
 }
 
 .code-block {
-  background-color: var(--code-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 0.25rem;
-  padding: 1rem;
-  overflow-x: auto;
-  margin: 1rem 0;
+  @apply border rounded p-4 overflow-x-auto my-4 [border-color:var(--border-color)] [background-color:var(--code-bg)];
 }
 
 .code-block code {
-  font-family: 'Courier New', monospace;
-  color: var(--code-text);
-  font-size: 0.875rem;
-  line-height: 1.5;
+  @apply font-mono text-sm leading-relaxed [color:var(--code-text)];
 }
 
 .links-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
+  @apply grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4;
 }
 
 .link-card {
-  display: block;
-  padding: 1rem;
-  background-color: var(--bg-primary);
-  border: 1px solid var(--border-color);
-  border-radius: 0.25rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
+  @apply block p-4 border rounded no-underline transition-all duration-300 [border-color:var(--border-color)] [background-color:var(--bg-primary)];
 }
 
 .link-card:hover {
-  background-color: var(--card-bg);
-  border-color: var(--primary-color);
-  transform: translateY(-2px);
-  box-shadow: var(--card-shadow);
+  @apply -translate-y-0.5 [background-color:var(--card-bg)] [border-color:var(--primary-color)] [box-shadow:var(--card-shadow)];
 }
 
 .link-card h3 {
-  margin: 0 0 0.5rem 0;
-  color: var(--text-primary);
-  font-size: 1rem;
+  @apply m-0 mb-2 text-base [color:var(--text-primary)];
 }
 
 .link-card p {
-  margin: 0;
-  color: var(--text-secondary);
-  font-size: 0.875rem;
+  @apply m-0 text-sm [color:var(--text-secondary)];
 }
 </style>
