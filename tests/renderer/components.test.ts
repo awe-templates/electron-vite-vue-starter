@@ -144,7 +144,7 @@ describe('Vue Components', () => {
     const wrapper = mount(Home);
     const techLinks = wrapper.findAll('.tech-icon-item');
 
-    techLinks.forEach(link => {
+    techLinks.forEach((link: any) => {
       expect(link.element.tagName).toBe('A');
       expect(link.attributes('target')).toBe('_blank');
       expect(link.attributes('href')).toBeTruthy();
@@ -165,7 +165,7 @@ describe('Vue Components', () => {
 
     expect(featuresList.exists()).toBe(true);
     expect(featuresList.findAll('li').length).toBeGreaterThan(0);
-    featuresList.findAll('li').forEach(item => {
+    featuresList.findAll('li').forEach((item: any) => {
       expect(item.find('strong').exists()).toBe(true);
     });
   });
@@ -175,7 +175,7 @@ describe('Vue Components', () => {
     const linkCards = wrapper.findAll('.link-card');
 
     expect(linkCards.length).toBeGreaterThanOrEqual(4);
-    const hrefs = linkCards.map(card => card.attributes('href'));
+    const hrefs = linkCards.map((card: any) => card.attributes('href'));
     expect(hrefs).toContain('https://www.electronjs.org');
     expect(hrefs).toContain('https://vuejs.org');
     expect(hrefs).toContain('https://vite.dev');
