@@ -7,19 +7,15 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'happy-dom',
-    setupFiles: [
-      './tests/main/setup.ts',
-      './tests/setup.ts',
-    ],
+    setupFiles: ['./tests/main/setup.ts', './tests/setup.ts'],
     include: ['tests/**/*.test.ts'],
     coverage: {
       provider: 'v8',
       reporter: ['text', 'json', 'html'],
       exclude: ['node_modules/', 'dist/', 'tests/'],
     },
-    environmentMatchGlobs: [
-      ['tests/main/**', 'node'],
-    ],
+    // @ts-expect-error - environmentMatchGlobs is a valid vitest config option
+    environmentMatchGlobs: [['tests/main/**', 'node']],
   },
   resolve: {
     alias: {
