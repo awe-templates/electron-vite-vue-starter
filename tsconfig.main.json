@@ -1,0 +1,8 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "lib": ["ES2022"],
+    "types": ["node"]
+  },
+  "include": ["electron/main/**/*", "electron/preload/**/*", "electron/shared/**/*", "types/**/*", "tests/main/**/*", "tests/setup.ts"]
+}
