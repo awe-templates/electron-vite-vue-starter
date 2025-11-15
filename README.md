@@ -1,6 +1,6 @@
-# Electron Vite Starter
+# Electron, Typescript, Vite, Vue, TailwindCSS Starter
 
-A modern, type-safe Electron starter template with Vite and TypeScript.
+A modern, type-safe Electron starter template with Vite, Vue, and TailwindCSS.
 
 ![CI](https://github.com/awe-templates/electron-vite-starter/workflows/test/badge.svg)
 ![Dependency Version](https://img.shields.io/github/package-json/dependency-version/awe-templates/electron-vite-starter/dev/electron)
