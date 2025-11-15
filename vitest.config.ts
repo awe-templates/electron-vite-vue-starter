@@ -1,17 +1,25 @@
 import { defineConfig } from 'vitest/config';
 import { resolve } from 'path';
+import vue from '@vitejs/plugin-vue';
 
 export default defineConfig({
+  plugins: [vue()],
   test: {
     globals: true,
-    environment: 'node',
-    setupFiles: ['./tests/setup.ts'],
+    environment: 'happy-dom',
+    setupFiles: [
+      './tests/main/setup.ts',
+      './tests/setup.ts',
+    ],
     include: ['tests/**/*.test.ts'],
     coverage: {
       provider: 'v8',
       reporter: ['text', 'json', 'html'],
       exclude: ['node_modules/', 'dist/', 'tests/'],
     },
+    environmentMatchGlobs: [
+      ['tests/main/**', 'node'],
+    ],
   },
   resolve: {
     alias: {

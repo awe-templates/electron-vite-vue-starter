@@ -1,10 +1,5 @@
 import { vi } from 'vitest';
 
-// Mock fs module
-vi.mock('fs', () => ({
-  existsSync: vi.fn(() => true),
-}));
-
 // Mock Electron APIs
 export const mockBrowserWindow = {
   loadURL: vi.fn(),
