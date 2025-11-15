@@ -23,7 +23,8 @@
       "@shared/*": ["./electron/shared/*"],
       "@preload/*": ["./electron/preload/*"],
       "@types/*": ["./types/*"]
-    }
+    },
+    "types": ["vue"]
   },
   "include": [
     "electron/**/*",

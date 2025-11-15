@@ -24,7 +24,10 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@egoist/tipc": "^0.3.2"
+    "@egoist/tipc": "^0.3.2",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "vue": "^3.5.24",
+    "vue-router": "^4.6.3"
   },
   "devDependencies": {
     "@commitlint/cli": "^20.1.0",

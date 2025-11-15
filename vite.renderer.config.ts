@@ -1,8 +1,9 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
+import vue from '@vitejs/plugin-vue';
 
 export default defineConfig({
-  plugins: [],
+  plugins: [vue()],
   resolve: {
     alias: {
       '@app': resolve(__dirname, 'src'),
