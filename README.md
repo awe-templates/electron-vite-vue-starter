@@ -27,6 +27,15 @@ A modern, type-safe Electron starter template with Vite, Vue, and TailwindCSS.
     - [Registering Handlers (Main Process)](#registering-handlers-main-process)
     - [Exposing API (Preload Script)](#exposing-api-preload-script)
     - [Using in Renderer Process](#using-in-renderer-process)
+  - [🎨 Vue 3 \& Router](#-vue-3--router)
+    - [Project Structure](#project-structure)
+    - [Creating New Pages](#creating-new-pages)
+    - [Using the Router Programmatically](#using-the-router-programmatically)
+  - [🎨 Styling with Tailwind CSS](#-styling-with-tailwind-css)
+    - [Configuration](#configuration)
+    - [Using Tailwind Classes](#using-tailwind-classes)
+    - [Global Styles](#global-styles)
+    - [Dark Mode](#dark-mode)
   - [🗺️ Path Aliases](#️-path-aliases)
   - [🔄 Development Workflow](#-development-workflow)
   - [📝 Conventional Commits](#-conventional-commits)
@@ -36,13 +45,21 @@ A modern, type-safe Electron starter template with Vite, Vue, and TailwindCSS.
     - [Git Hooks](#git-hooks)
   - [📂 Directory Organization](#-directory-organization)
   - [⚠️ Error Handling](#️-error-handling)
+  - [💻 Code Quality \& ESLint v9](#-code-quality--eslint-v9)
+    - [ESLint Configuration](#eslint-configuration)
+    - [Running Linting Commands](#running-linting-commands)
+    - [Prettier Integration](#prettier-integration)
+    - [Pre-commit Hooks](#pre-commit-hooks)
   - [💻 VSCode Integration](#-vscode-integration)
   - [📦 Package Scripts](#-package-scripts)
   - [🏗️ Building for Distribution](#️-building-for-distribution)
-    - [Prerequisites](#prerequisites-1)
+    - [Prerequisites for Distribution](#prerequisites-for-distribution)
     - [Build Configuration](#build-configuration)
     - [Packaging Commands](#packaging-commands)
     - [Build Outputs](#build-outputs)
+      - [macOS](#macos)
+      - [Windows](#windows)
+      - [Linux](#linux)
     - [Customizing the Build](#customizing-the-build)
     - [Code Signing](#code-signing)
   - [📄 License](#-license)
@@ -50,13 +67,16 @@ A modern, type-safe Electron starter template with Vite, Vue, and TailwindCSS.
 
 ## ✨ Features
 
-- **[Electron](https://electronjs.org/)** - Latest stable version for cross-platform desktop apps
+- **[Electron](https://electronjs.org/)** - Cross-platform desktop application framework
+- **[Vue 3](https://vuejs.org/)** - Progressive JavaScript framework with Composition API
+- **[Vue Router](https://router.vuejs.org/)** - Official router for client-side navigation
 - **[TypeScript](https://www.typescriptlang.org/)** - Full type safety with strict mode enabled
 - **[Vite](https://vite.dev/)** - Lightning-fast build tool with HMR
+- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework with PostCSS integration
 - **[@egoist/tipc](https://github.com/egoist/tipc)** - Type-safe IPC communication
 - **[@electron-toolkit](https://github.com/alex8088/electron-toolkit)** - Utilities for Electron development (utils, preload, tsconfig)
-- **[ESLint](https://eslint.org/)** - Code linting with flat config
-- **[Prettier](https://prettier.io/)** - Code formatting
+- **[ESLint](https://eslint.org/)** - Code linting with flat config and Vue 3 support
+- **[Prettier](https://prettier.io/)** - Code formatting with Vue and Tailwind CSS plugins
 - **[Vitest](https://vitest.dev/)** - Fast unit testing with Electron API mocks
 - **[PostCSS](https://postcss.org/)** - CSS processing with Autoprefixer
 - **[Commitlint](https://commitlint.js.org/)** - Conventional commit message validation
@@ -90,9 +110,14 @@ electron-vite-starter/
 │   └── shared/            # Shared IPC definitions
 │       └── ipc.ts         # IPC route definitions
 ├── src/                   # Application code (renderer)
+│   ├── App.vue            # Root Vue component with navigation
 │   ├── index.html         # HTML template
-│   ├── main.ts            # TypeScript entry point
-│   └── styles.css         # Styles
+│   ├── main.ts            # Vue app initialization with router
+│   ├── router.ts          # Vue Router configuration
+│   ├── styles.css         # Global styles with Tailwind CSS
+│   └── pages/             # Page components
+│       ├── Home.vue       # Home page
+│       └── About.vue      # About page
 ├── types/                 # Type definitions
 │   └── vite-env.d.ts      # Vite and Electron API types
 ├── tests/                 # Test files
@@ -117,10 +142,12 @@ electron-vite-starter/
 ├── tsconfig.json          # Base TypeScript config
 ├── tsconfig.main.json     # Main process TS config
 ├── tsconfig.renderer.json # Renderer process TS config
+├── tailwind.config.ts     # Tailwind CSS configuration
 ├── electron-builder.yml   # electron-builder config
-├── eslint.config.mjs      # ESLint flat config
+├── eslint.config.mjs      # ESLint flat config (v9 with Vue 3 support)
 ├── commitlint.config.mjs  # Commitlint config
-├── .prettierrc            # Prettier config
+├── .postcssrc.json        # PostCSS configuration for Tailwind CSS
+├── .prettierrc            # Prettier configuration
 ├── .gitattributes         # Git attributes for consistent line endings
 └── vitest.config.ts       # Vitest config
 ```
@@ -287,6 +314,137 @@ button?.addEventListener('click', async () => {
 });
 ```
 
+## 🎨 Vue 3 & Router
+
+This template includes Vue 3 with Vue Router for building modern, reactive user interfaces with client-side routing.
+
+### Project Structure
+
+Vue components and pages are organized as follows:
+
+```txt
+src/
+├── App.vue              # Root component with navigation
+├── main.ts              # Vue app initialization with router
+├── router.ts            # Router configuration
+├── styles.css           # Global styles with Tailwind CSS
+└── pages/               # Page components
+    ├── Home.vue         # Home page
+    └── About.vue        # About page
+```
+
+### Creating New Pages
+
+To add a new page:
+
+1. Create a new component in `src/pages/MyPage.vue`
+2. Add a route in `src/router.ts`:
+
+   ```typescript
+   import MyPage from './pages/MyPage.vue';
+
+   const routes: RouteRecordRaw[] = [
+     {
+       path: '/my-page',
+       name: 'MyPage',
+       component: MyPage,
+     },
+   ];
+   ```
+
+3. Use `<router-link>` in your templates:
+
+```vue
+<router-link to="/my-page">Go to My Page</router-link>
+```
+
+### Using the Router Programmatically
+
+```typescript
+import { useRouter } from 'vue-router';
+
+export default {
+  setup() {
+    const router = useRouter();
+
+    const goToHome = () => {
+      router.push('/');
+    };
+
+    return { goToHome };
+  },
+};
+```
+
+## 🎨 Styling with Tailwind CSS
+
+Tailwind CSS is pre-configured for rapid UI development with utility-first styling.
+
+### Configuration
+
+Tailwind CSS configuration is defined in `tailwind.config.ts`:
+
+```typescript
+import type { Config } from 'tailwindcss';
+
+export default {
+  content: ['./src/**/*.{vue,js,ts}'],
+  theme: {
+    extend: {
+      // Custom theme extensions
+    },
+  },
+  plugins: [],
+} satisfies Config;
+```
+
+### Using Tailwind Classes
+
+Apply utility classes directly in your Vue templates:
+
+```vue
+<template>
+  <div class="flex items-center justify-center min-h-screen bg-gray-100">
+    <button class="px-4 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700">
+      Click me
+    </button>
+  </div>
+</template>
+```
+
+### Global Styles
+
+Base styles and CSS variables are defined in `src/styles.css`:
+
+```css
+@import 'tailwindcss/theme';
+
+:root {
+  /* Custom CSS variables for theming */
+  --bg-primary: #ffffff;
+  --text-primary: #1a1a1a;
+}
+
+[data-theme='dark'] {
+  --bg-primary: #1a1a1a;
+  --text-primary: #ffffff;
+}
+```
+
+### Dark Mode
+
+Tailwind CSS includes built-in dark mode support. The template uses CSS variables with `data-theme` attribute for flexible theming:
+
+```vue
+<script setup>
+const toggleTheme = () => {
+  const theme = document.documentElement.getAttribute('data-theme');
+  const newTheme = theme === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', newTheme);
+};
+</script>
+```
+
 ## 🗺️ Path Aliases
 
 The following path aliases are configured:
@@ -401,6 +559,85 @@ if (result.success) {
 }
 ```
 
+## 💻 Code Quality & ESLint v9
+
+This template uses ESLint with the new flat config format, providing comprehensive linting for JavaScript, TypeScript, and Vue files.
+
+### ESLint Configuration
+
+The configuration is defined in `eslint.config.mjs` using the flat config format:
+
+```javascript
+export default [
+  // Global ignores
+  { ignores: ['node_modules/**', 'dist/**'] },
+
+  // TypeScript files
+  {
+    files: ['src/**/*.ts', 'src/**/*.tsx'],
+    languageOptions: { parser: tsparser },
+    rules: { /* rules */ },
+  },
+
+  // Vue files with Vue 3 recommended rules
+  {
+    files: ['src/**/*.vue'],
+    languageOptions: { parser: vueParser },
+    plugins: { vue: vuePlugin },
+    rules: {
+      'vue/multi-word-component-names': 'off',
+      'vue/no-unused-components': 'warn',
+      /* more Vue 3 rules */
+    },
+  },
+];
+```
+
+### Running Linting Commands
+
+```bash
+# Check for linting errors
+pnpm lint
+
+# Auto-fix fixable errors
+pnpm lint:fix
+
+# Format code with Prettier
+pnpm format
+
+# Check formatting without changes
+pnpm format:check
+
+# Run TypeScript compiler checks
+pnpm type-check
+```
+
+### Prettier Integration
+
+ESLint and Prettier work together seamlessly:
+
+- Prettier configuration is read from `.prettierrc`
+- ESLint enforces Prettier formatting rules
+- Prettier plugins for Vue and Tailwind CSS are enabled
+- No conflicting rules between ESLint and Prettier
+
+### Pre-commit Hooks
+
+Husky automatically runs quality checks before committing:
+
+```bash
+# These run automatically before each commit:
+- pnpm lint        # ESLint linting
+- pnpm type-check  # TypeScript checking
+- pnpm test        # Unit tests
+```
+
+Skip hooks (not recommended):
+
+```bash
+git commit --no-verify
+```
+
 ## 💻 VSCode Integration
 
 Recommended extensions (defined in `.vscode/extensions.json`):
@@ -409,12 +646,14 @@ Recommended extensions (defined in `.vscode/extensions.json`):
 - Prettier
 - TypeScript
 - Vitest
+- Volar (for Vue 3 support)
 
 Settings are pre-configured in `.vscode/settings.json` for:
 
-- Format on save
-- Auto-fix ESLint issues
+- Format on save with Prettier
+- Auto-fix ESLint issues on save
 - TypeScript workspace version
+- Tailwind CSS IntelliSense
 
 ## 📦 Package Scripts
 
@@ -440,7 +679,7 @@ Settings are pre-configured in `.vscode/settings.json` for:
 
 This template comes with electron-builder pre-configured for packaging and distributing your application.
 
-### Prerequisites
+### Prerequisites for Distribution
 
 Before building for distribution, you need to provide application icons. See [`build/README.md`](build/README.md) for detailed instructions on creating and adding icons for each platform.
 
@@ -469,17 +708,17 @@ pnpm package:linux   # Creates AppImage and DEB for Linux
 
 After packaging, you'll find the installers in the `release/` directory:
 
-**macOS**
+#### macOS
 
 - `.dmg` - Disk image installer
 - `.zip` - Compressed application
 
-**Windows**
+#### Windows
 
 - `.exe` - NSIS installer
 - `.exe` (portable) - Standalone executable
 
-**Linux**
+#### Linux
 
 - `.AppImage` - Universal Linux application
 - `.deb` - Debian package
