@@ -43,6 +43,7 @@
     "@typescript-eslint/eslint-plugin": "^8.46.4",
     "@typescript-eslint/parser": "^8.46.4",
     "@vitest/ui": "^4.0.9",
+    "@vue/test-utils": "^2.4.6",
     "autoprefixer": "^10.4.22",
     "electron": "^39.2.0",
     "electron-builder": "^26.0.12",
