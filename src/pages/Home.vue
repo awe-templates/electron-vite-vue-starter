@@ -70,16 +70,22 @@
           <span>Electron</span>
         </a>
 
-        <a href="https://vuejs.org" target="_blank" class="tech-icon-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg" alt="Vue"
-            class="tech-icon" />
-          <span>Vue 3</span>
-        </a>
-
         <a href="https://www.typescriptlang.org" target="_blank" class="tech-icon-item">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
             alt="TypeScript" class="tech-icon" />
           <span>TypeScript</span>
+        </a>
+
+        <a href="https://vuejs.org" target="_blank" class="tech-icon-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg" alt="Vue"
+            class="tech-icon" />
+          <span>Vue</span>
+        </a>
+
+        <a href="https://tailwindcss.com" target="_blank" class="tech-icon-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
+            alt="TailwindCSS" class="tech-icon" />
+          <span>TailwindCSS</span>
         </a>
 
         <a href="https://vite.dev" target="_blank" class="tech-icon-item">
@@ -92,11 +98,6 @@
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitest/vitest-original.svg" alt="Vitest"
             class="tech-icon" />
           <span>Vitest</span>
-        </a>
-
-        <a href="https://router.vuejs.org" target="_blank" class="tech-icon-item">
-          <img src="https://router.vuejs.org/logo.svg" alt="Vue Router" class="tech-icon" />
-          <span>Vue Router</span>
         </a>
       </div>
     </div>
