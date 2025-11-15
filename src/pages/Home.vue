@@ -165,14 +165,14 @@ onMounted(() => {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
   .info-card {
-    @apply border rounded-lg p-6 transition-shadow duration-300 [border-color:var(--border-color)] [background-color:var(--card-bg)];
+    @apply border rounded-lg p-6 transition-shadow duration-300 border-(--border-color) bg-(--card-bg);
 
     &:hover {
       @apply [box-shadow:var(--card-shadow)];
     }
 
     h2 {
-      @apply m-0 mb-4 text-xl [color:var(--text-primary)];
+      @apply m-0 mb-4 text-xl text-(--text-primary);
     }
 
     .info-grid {
@@ -182,11 +182,11 @@ onMounted(() => {
         @apply flex flex-col gap-0.5;
 
         .info-label {
-          @apply text-sm font-medium [color:var(--text-secondary)];
+          @apply text-sm font-medium text-(--text-secondary);
         }
 
         .info-value {
-          @apply font-mono text-sm [color:var(--text-primary)];
+          @apply font-mono text-sm text-(--text-primary);
         }
       }
     }
@@ -198,10 +198,10 @@ onMounted(() => {
     grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
 
     .tech-icon-item {
-      @apply flex flex-col items-center gap-2 no-underline transition-all duration-300 p-2 rounded [color:var(--text-secondary)];
+      @apply flex flex-col items-center gap-2 no-underline transition-all duration-300 p-2 rounded text-(--text-secondary);
 
       &:hover {
-        @apply [color:var(--primary-color)] -translate-y-0.5;
+        @apply text-(--primary-color) -translate-y-0.5;
       }
     }
   }

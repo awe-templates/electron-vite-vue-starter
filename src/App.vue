@@ -56,33 +56,33 @@ onMounted(() => {
 }
 
 .header {
-  @apply flex items-center justify-between px-4 py-4 border-b [border-color:var(--border-color)] [background-color:var(--header-bg)];
+  @apply flex items-center justify-between px-4 py-4 border-b border-(--border-color) bg-(--header-bg);
 
   .title {
-    @apply text-2xl font-bold m-0 [color:var(--text-primary)];
+    @apply text-2xl font-bold m-0 text-(--text-primary);
   }
 
   .nav {
     @apply flex gap-6 flex-1 justify-center;
 
     a {
-      @apply text-base no-underline font-medium transition-colors duration-300 py-2 px-0 border-b-2 border-transparent [color:var(--text-secondary)];
+      @apply text-base no-underline font-medium transition-colors duration-300 py-2 px-0 border-b-2 border-transparent text-(--text-secondary);
 
       &:hover {
-        @apply [color:var(--text-primary)];
+        @apply text-(--text-primary);
       }
 
       &.active {
-        @apply [color:var(--primary-color)] [border-bottom-color:var(--primary-color)];
+        @apply text-(--primary-color) border-b-(--primary-color);
       }
     }
   }
 
   .theme-toggle {
-    @apply bg-none border-none cursor-pointer p-2 flex items-center justify-center transition-colors duration-300 [color:var(--text-secondary)];
+    @apply bg-none border-none cursor-pointer p-2 flex items-center justify-center transition-colors duration-300 text-(--text-secondary);
 
     &:hover {
-      @apply [color:var(--text-primary)];
+      @apply text-(--text-primary);
     }
 
     .icon {
@@ -92,6 +92,6 @@ onMounted(() => {
 }
 
 .main {
-  @apply flex-1 overflow-y-auto px-8 py-8 [background-color:var(--bg-primary)];
+  @apply flex-1 overflow-y-auto px-8 py-8 bg-(--bg-primary);
 }
 </style>

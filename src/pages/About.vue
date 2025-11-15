@@ -118,56 +118,58 @@ electron/
   @apply max-w-3xl mx-auto;
 
   h1 {
-    @apply mb-8 text-5xl [color:var(--text-primary)];
+    @apply mb-8 text-5xl text-(--text-primary);
   }
 
   .about-section {
-    @apply mb-8 p-6 border rounded-lg [border-color:var(--border-color)] [background-color:var(--card-bg)];
+    @apply mb-8 p-6 border rounded-lg border-(--border-color) bg-(--card-bg);
 
     h2 {
-      @apply mt-0 mb-4 text-2xl [color:var(--text-primary)];
+      @apply mt-0 mb-4 text-2xl text-(--text-primary);
     }
 
     p {
-      @apply leading-relaxed my-2 [color:var(--text-secondary)];
+      @apply leading-relaxed my-2 text-(--text-secondary);
     }
 
     .features-list {
       @apply list-none p-0 m-0;
 
       li {
-        @apply py-2 leading-relaxed [color:var(--text-secondary)];
+        @apply py-2 leading-relaxed text-(--text-secondary);
 
         strong {
-          @apply [color:var(--text-primary)];
+          @apply text-(--text-primary);
         }
       }
     }
 
     .code-block {
-      @apply border rounded p-4 overflow-x-auto my-4 [border-color:var(--border-color)] [background-color:var(--code-bg)];
+      @apply border rounded p-4 overflow-x-auto my-4 border-(--border-color) bg-(--code-bg);
 
       code {
-        @apply font-mono text-sm leading-relaxed [color:var(--code-text)];
+        @apply font-mono text-sm leading-relaxed text-(--code-text);
       }
     }
 
     .links-grid {
-      @apply grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+      @apply grid gap-4;
 
       .link-card {
-        @apply block p-4 border rounded no-underline transition-all duration-300 [border-color:var(--border-color)] [background-color:var(--bg-primary)];
+        @apply block p-4 border rounded no-underline transition-all duration-300 border-(--border-color) bg-(--bg-primary);
 
         &:hover {
-          @apply -translate-y-0.5 [background-color:var(--card-bg)] [border-color:var(--primary-color)] [box-shadow:var(--card-shadow)];
+          @apply -translate-y-0.5 bg-(--card-bg) border-(--primary-color) [box-shadow:var(--card-shadow)];
         }
 
         h3 {
-          @apply m-0 mb-2 text-base [color:var(--text-primary)];
+          @apply m-0 mb-2 text-base text-(--text-primary);
         }
 
         p {
-          @apply m-0 text-sm [color:var(--text-secondary)];
+          @apply m-0 text-sm text-(--text-secondary);
         }
       }
     }
