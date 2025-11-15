@@ -160,7 +160,9 @@ onMounted(() => {
 @reference 'tailwindcss';
 
 .section {
-  @apply grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6;
+  @apply grid gap-6;
+
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .info-card {
@@ -192,7 +194,9 @@ onMounted(() => {
 }
 
 .tech-icons {
-  @apply grid grid-cols-[repeat(auto-fit,minmax(80px,1fr))] gap-4;
+  @apply grid gap-4;
+
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
 }
 
 .tech-icon-item {
