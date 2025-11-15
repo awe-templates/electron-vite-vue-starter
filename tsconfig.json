@@ -2,7 +2,11 @@
   "compilerOptions": {
     "target": "ES2022",
     "module": "ESNext",
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
+    ],
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "allowJs": true,
@@ -18,13 +22,25 @@
     "verbatimModuleSyntax": true,
     "baseUrl": ".",
     "paths": {
-      "@main/*": ["./electron/main/*"],
-      "@app/*": ["./src/*"],
-      "@shared/*": ["./electron/shared/*"],
-      "@preload/*": ["./electron/preload/*"],
-      "@types/*": ["./types/*"]
+      "@main/*": [
+        "./electron/main/*"
+      ],
+      "@app/*": [
+        "./src/*"
+      ],
+      "@shared/*": [
+        "./electron/shared/*"
+      ],
+      "@preload/*": [
+        "./electron/preload/*"
+      ],
+      "@types/*": [
+        "./types/*"
+      ]
     },
-    "types": ["vue"]
+    "types": [
+      "vue"
+    ]
   },
   "include": [
     "electron/**/*",
@@ -33,5 +49,9 @@
     "tests/**/*",
     ".scripts/**/*"
   ],
-  "exclude": ["node_modules", "dist"]
+  "exclude": [
+    "node_modules",
+    "dist",
+    ".scripts"
+  ]
 }
