@@ -2,7 +2,7 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "types": ["vite/client", "vue", "vitest/globals", "@vue/test-utils"],
+    "types": ["vite/client", "vue", "vitest/globals"],
     "jsx": "preserve"
   },
   "include": ["src/**/*", "electron/shared/**/*", "types/**/*", "tests/renderer/**/*", "tests/setup.ts"]
