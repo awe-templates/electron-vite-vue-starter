@@ -2,14 +2,14 @@
 
 A modern, type-safe Electron starter template with Vite, Vue, and TailwindCSS.
 
-![CI](https://github.com/awe-templates/electron-vite-starter/workflows/test/badge.svg)
-![Dependency Version](https://img.shields.io/github/package-json/dependency-version/awe-templates/electron-vite-starter/dev/electron)
-![Dependency Version](https://img.shields.io/github/package-json/dependency-version/awe-templates/electron-vite-starter/dev/typescript)
-![Dependency Version](https://img.shields.io/github/package-json/dependency-version/awe-templates/electron-vite-starter/dev/vue)
-![Dependency Version](https://img.shields.io/github/package-json/dependency-version/awe-templates/electron-vite-starter/dev/tailwindcss)
-![Dependency Version](https://img.shields.io/github/package-json/dependency-version/awe-templates/electron-vite-starter/dev/vite)
-![Dependency Version](https://img.shields.io/github/package-json/dependency-version/awe-templates/electron-vite-starter/dev/vitest)
-![Dependency Version](https://img.shields.io/github/package-json/dependency-version/awe-templates/electron-vite-starter/dev/postcss)
+![CI Test](https://github.com/awe-templates/electron-vite-vue-starter/workflows/test/badge.svg)
+![Electron Version](https://img.shields.io/github/package-json/dependency-version/awe-templates/electron-vite-vue-starter/dev/electron)
+![TypeScript Version](https://img.shields.io/github/package-json/dependency-version/awe-templates/electron-vite-vue-starter/dev/typescript)
+![Vue Version](https://img.shields.io/github/package-json/dependency-version/awe-templates/electron-vite-vue-starter/vue)
+![TailwindCSS Version](https://img.shields.io/github/package-json/dependency-version/awe-templates/electron-vite-vue-starter/dev/tailwindcss)
+![Vite Version](https://img.shields.io/github/package-json/dependency-version/awe-templates/electron-vite-vue-starter/dev/vite)
+![Vitest Version](https://img.shields.io/github/package-json/dependency-version/awe-templates/electron-vite-vue-starter/dev/vitest)
+![PostCSS Version](https://img.shields.io/github/package-json/dependency-version/awe-templates/electron-vite-vue-starter/dev/postcss)
 
 - [Electron, Typescript, Vite, Vue, TailwindCSS Starter](#electron-typescript-vite-vue-tailwindcss-starter)
   - [✨ Features](#-features)
