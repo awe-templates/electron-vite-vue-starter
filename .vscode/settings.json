@@ -15,5 +15,8 @@
     "**/out": true,
     "**/build": true,
     "pnpm-lock.yaml": true
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "Vue.volar"
   }
 }

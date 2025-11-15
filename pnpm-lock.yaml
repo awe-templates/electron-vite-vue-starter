@@ -90,9 +90,6 @@ importers:
       prettier-plugin-tailwindcss:
         specifier: ^0.7.1
         version: 0.7.1(prettier@3.6.2)
-      prettier-plugin-vue:
-        specifier: ^1.1.6
-        version: 1.1.6
       tailwindcss:
         specifier: ^4.1.17
         version: 4.1.17
@@ -2437,14 +2434,6 @@ packages:
         optional: true
       prettier-plugin-svelte:
         optional: true
-
-  prettier-plugin-vue@1.1.6:
-    resolution: {integrity: sha512-trQ/oY+6hSsGe2zPIFThXMIM0TbxMEbk2VOrKjwHWuSz7OEo0rnumbz9a47OxVPCaAnGY9vZG8qDTiTmk9bq0A==}
-
-  prettier@2.8.8:
-    resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}
-    engines: {node: '>=10.13.0'}
-    hasBin: true
 
   prettier@3.6.2:
     resolution: {integrity: sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ==}
@@ -5422,12 +5411,6 @@ snapshots:
   prettier-plugin-tailwindcss@0.7.1(prettier@3.6.2):
     dependencies:
       prettier: 3.6.2
-
-  prettier-plugin-vue@1.1.6:
-    dependencies:
-      prettier: 2.8.8
-
-  prettier@2.8.8: {}
 
   prettier@3.6.2: {}
 
