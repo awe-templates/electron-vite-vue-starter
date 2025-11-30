@@ -142,7 +142,6 @@ electron-vite-starter/
 ├── tsconfig.json          # Base TypeScript config
 ├── tsconfig.main.json     # Main process TS config
 ├── tsconfig.renderer.json # Renderer process TS config
-├── tailwind.config.ts     # Tailwind CSS configuration
 ├── electron-builder.yml   # electron-builder config
 ├── eslint.config.mjs      # ESLint flat config (v9 with Vue 3 support)
 ├── commitlint.config.mjs  # Commitlint config
@@ -381,22 +380,6 @@ export default {
 Tailwind CSS is pre-configured for rapid UI development with utility-first styling.
 
 ### Configuration
-
-Tailwind CSS configuration is defined in `tailwind.config.ts`:
-
-```typescript
-import type { Config } from 'tailwindcss';
-
-export default {
-  content: ['./src/**/*.{vue,js,ts}'],
-  theme: {
-    extend: {
-      // Custom theme extensions
-    },
-  },
-  plugins: [],
-} satisfies Config;
-```
 
 ### Using Tailwind Classes
 

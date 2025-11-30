@@ -55,7 +55,6 @@
     "dist",
     ".scripts",
     "vite.main.config.ts",
-    "vite.renderer.config.ts",
-    "tailwind.config.ts"
+    "vite.renderer.config.ts"
   ]
 }
