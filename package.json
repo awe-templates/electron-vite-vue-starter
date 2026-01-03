@@ -23,7 +23,8 @@
     "format": "prettier --write \"src/**/*.{ts,tsx,json,css,html}\"",
     "format:check": "prettier --check \"src/**/*.{ts,tsx,json,css,html}\"",
     "type-check": "tsc --noEmit -p tsconfig.main.json && tsc --noEmit -p tsconfig.renderer.json",
-    "prepare": "husky"
+    "prepare": "husky",
+    "postinstall": "electron-rebuild"
   },
   "dependencies": {
     "@egoist/tipc": "^0.3.2",
@@ -36,6 +37,7 @@
     "@electron-toolkit/preload": "^3.0.2",
     "@electron-toolkit/tsconfig": "^2.0.0",
     "@electron-toolkit/utils": "^4.0.0",
+    "@electron/rebuild": "^4.0.2",
     "@eslint/js": "^9.39.1",
     "@tailwindcss/postcss": "^4.1.17",
     "@types/node": "^24.10.1",
